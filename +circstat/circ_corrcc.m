@@ -21,6 +21,8 @@ function [rho, pval] = circ_corrcc(alpha1, alpha2)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
+import circstat.circ_mean;
+
 if size(alpha1,2) > size(alpha1,1)
 	alpha1 = alpha1';
 end

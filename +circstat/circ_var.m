@@ -30,6 +30,8 @@ function [S, s] = circ_var(alpha, w, d, dim)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
+import circstat.circ_r;
+
 if nargin < 4
   dim = 1;
 end

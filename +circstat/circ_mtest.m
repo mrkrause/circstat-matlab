@@ -33,6 +33,8 @@ function [h, mu, ul, ll] = circ_mtest(alpha, dir, xi, w, d)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
+import circstat.*;
+
 if size(alpha,2) > size(alpha,1)
 	alpha = alpha';
 end

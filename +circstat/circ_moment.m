@@ -28,6 +28,9 @@ function [mp,  rho_p, mu_p] = circ_moment(alpha, w, p, cent, dim)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de
 
+import circstat.circ_dist;
+import circstat.circ_mean;
+
 if nargin < 5
   dim = 1;
 end

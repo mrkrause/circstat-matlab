@@ -31,6 +31,9 @@ function [pval, med, P] = circ_cmtest(varargin)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
+import circstat.circ_dist;
+import circstat.circ_median;
+
 [alpha, idx] = processInput(varargin{:});
 
 % number of groups

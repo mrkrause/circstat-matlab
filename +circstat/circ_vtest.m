@@ -36,6 +36,8 @@ function [pval, v] = circ_vtest(alpha, dir, w, d)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
+import circstat.circ_r;
+import circstat.circ_mean;
 
 if size(alpha,2) > size(alpha,1)
 	alpha = alpha';
