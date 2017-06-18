@@ -22,6 +22,9 @@ function pval = circ_symtest(alpha)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
+import circstat.circ_median;
+import circstat.circ_dist;
+
 if size(alpha,2) > size(alpha,1)
 	alpha = alpha';
 end

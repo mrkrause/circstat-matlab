@@ -19,6 +19,7 @@ function kappa = circ_kappa(alpha,w)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
+import circstat.circ_r;
 
 alpha = alpha(:);
 

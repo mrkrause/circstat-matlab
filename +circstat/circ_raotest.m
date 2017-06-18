@@ -38,6 +38,8 @@ function [p, U, UC] = circ_raotest(alpha)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de
 
+import circstat.circ_rad2ang;
+
 alpha = alpha(:);
 
 % for the purpose of the test, convert to angles
@@ -60,7 +62,7 @@ U = (1/2)*U;
 
 % get critical value from table
 [p, UC] = getVal(n,U);
-
+end
 
 
 function [p, UC] = getVal(N, U)
@@ -123,4 +125,4 @@ else
   p = .5;
 end
 end
-end
+

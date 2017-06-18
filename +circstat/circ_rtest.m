@@ -30,6 +30,8 @@ function [pval, z] = circ_rtest(alpha, w, d)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
+import circstat.circ_r;
+
 if size(alpha,2) > size(alpha,1)
 	alpha = alpha';
 end
@@ -66,3 +68,4 @@ pval = exp(sqrt(1+4*n+4*(n^2-R^2))-(1+2*n));
 % end
 
 end
+

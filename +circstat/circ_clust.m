@@ -21,6 +21,7 @@ function [cid, alpha, mu] = circ_clust(alpha, numclust, disp)
 % velasco@ccs.fau.edu
 % Distributed under Open Source BSD License
 
+import circstat.*;
 
 if nargin < 2, numclust = 5; end;
 if nargin < 3, disp = 0; end

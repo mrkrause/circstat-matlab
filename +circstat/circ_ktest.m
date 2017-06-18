@@ -26,6 +26,8 @@ function [pval, f] = circ_ktest(alpha1, alpha2)
 % By Marc J. Velasco, 2009
 % velasco@ccs.fau.edu
 
+import circstat.circ_r;
+
 alpha1 = alpha1(:);
 alpha2 = alpha2(:);
 

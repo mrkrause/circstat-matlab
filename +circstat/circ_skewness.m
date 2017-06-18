@@ -1,7 +1,7 @@
-function [k, k0] = circ_kurtosis(alpha, w, dim)
+function [b, b0] = circ_skewness(alpha, w, dim)
 
-% [k k0] = circ_kurtosis(alpha,w,dim)
-%   Calculates a measure of angular kurtosis.
+% [b b0] = circ_skewness(alpha,w,dim)
+%   Calculates a measure of angular skewness.
 %
 %   Input:
 %     alpha     sample of angles
@@ -9,20 +9,22 @@ function [k, k0] = circ_kurtosis(alpha, w, dim)
 %     [dim      statistic computed along this dimension, default: 1st non-singular dimension]
 %
 %     If dim argument is specified, all other optional arguments can be
-%     left empty: circ_kurtosis(alpha, [], dim)
+%     left empty: circ_skewness(alpha, [], dim)
 %
 %   Output:
-%     k         kurtosis (from Pewsey)
-%     k0        kurtosis (from Fisher)
+%     b         skewness (from Pewsey)
+%     b0        alternative skewness measure (from Fisher)
 %
 %   References:
 %     Pewsey, Metrika, 2004
-%     Fisher, Circular Statistics, p. 34
+%     Statistical analysis of circular data, Fisher, p. 34
 %
 % Circular Statistics Toolbox for Matlab
 
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de
+
+import circstat.*;
 
 if nargin < 3
   dim = find(size(alpha) > 1, 1, 'first');
@@ -41,15 +43,14 @@ else
   end 
 end
 
-% compute mean direction
+
+% compute neccessary values
 R = circ_r(alpha,w,[],dim);
 theta = circ_mean(alpha,w,dim);
-[~, rho2] = circ_moment(alpha,w,2,true,dim);
-[~, ~, mu2] = circ_moment(alpha,w,2,false,dim);
+[~, rho2, mu2] = circ_moment(alpha,w,2,true,dim);
 
 % compute skewness 
 theta2 = repmat(theta, size(alpha)./size(theta));
-k = sum(w.*(cos(2*(circ_dist(alpha,theta2)))),dim)./sum(w,dim);
-k0 = (rho2.*cos(circ_dist(mu2,2*theta))-R.^4)./(1-R).^2;    % (formula 2.30)
+b = sum(w.*(sin(2*(circ_dist(alpha,theta2)))),dim)./sum(w,dim);
+b0 = rho2.*sin(circ_dist(mu2,2*theta))./(1-R).^(3/2);    % (formula 2.29)
 end
-

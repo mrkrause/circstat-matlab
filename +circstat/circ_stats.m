@@ -23,6 +23,8 @@ function stats = circ_stats(alpha, w, d)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de 
 
+import circstat.*;
+
 alpha = alpha(:);
 if nargin<2
   w = ones(size(alpha));

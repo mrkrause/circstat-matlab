@@ -29,6 +29,10 @@ function [pval, table] = circ_hktest(alpha, idp, idq, inter, fn)
 %
 % Circular Statistics Toolbox for Matlab
 
+import circstat.circ_kappa;
+import circstat.circ_mean;
+import circstat.circ_r;
+
 % process inputs
 alpha = alpha(:); idp = idp(:); idq = idq(:);
 

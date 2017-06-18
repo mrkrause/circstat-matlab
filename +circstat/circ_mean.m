@@ -28,6 +28,8 @@ function [mu, ul, ll] = circ_mean(alpha, w, dim)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
+import circstat.circ_confmean;
+
 if nargin < 3
   dim = find(size(alpha) > 1, 1, 'first');
   if isempty(dim)

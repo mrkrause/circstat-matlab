@@ -24,6 +24,10 @@ function [thetahat, kappa] = circ_vmpar(alpha,w,d)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de
 
+import circstat.circ_kappa;
+import circstat.circ_mean;
+import circstat.circ_r;
+
 alpha = alpha(:);
 if nargin < 2
   w = ones(size(alpha));

@@ -33,6 +33,8 @@ function [pval, k, K] = circ_kuipertest(alpha1, alpha2, res, vis_on)
 % By Marc J. Velasco and Philipp Berens, 2009
 % velasco@ccs.fau.edu
 
+import circstat.circ_samplecdf;
+
 
 if nargin < 3
     res = 100;
