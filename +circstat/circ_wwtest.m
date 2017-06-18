@@ -38,6 +38,9 @@ function [pval, table] = circ_wwtest(varargin)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
+import circstat.circ_r;
+import circstat.circ_kappa;
+
 [alpha, idx, w] = processInput(varargin{:});
 
 % number of groups

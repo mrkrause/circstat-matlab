@@ -45,6 +45,9 @@ function a = circ_plot(alpha, format, formats, varargin)
 % By Philipp Berens & Marc J. Velasco, 2009
 % velasco@ccs.fau.edu, berens@tuebingen.mpg.de
 
+import circstat.circ_mean;
+import circstat.circ_r;
+
 if nargin < 2 || isempty(format)
     format = '';
 end
